@@ -1,0 +1,14 @@
+install.packages("e1071")
+library(e1071)
+setwd("F:R")
+sample<-read.csv("sample1.csv")
+sample
+trainData<-sample[1:14,]
+testdata<-sample[15,]
+model<-naiveBayes(Leaves~.,data = trainData)
+class(model)
+model
+results<-predict(model,testdata)
+class(results)
+results
+#Naive Bayesian Theorem
